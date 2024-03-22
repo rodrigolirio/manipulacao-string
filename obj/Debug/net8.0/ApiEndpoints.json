@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "manipulacao_string.Controllers.ManipulacaoStringController",
+    "Method": "ManipularString",
+    "RelativePath": "api/ManipulacaoString",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dados",
+        "Type": "manipulacao_string.Controllers.DadosEntrada",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

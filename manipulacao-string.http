@@ -1,0 +1,6 @@
+@manipulacao_string_HostAddress = http://localhost:5082
+
+GET {{manipulacao_string_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
