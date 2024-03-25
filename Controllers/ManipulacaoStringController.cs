@@ -5,22 +5,22 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace manipulacao_string.Controllers  {
-        [Route("api/[controller]")]
+        [Route("/")]
         [ApiController]
         public class ManipulacaoStringController : ControllerBase {
             [HttpPost]
             public IActionResult ManipularString([FromBody] DadosEntrada dados) {
                 if (string.IsNullOrEmpty(dados?.Texto)) {
-                    return BadRequest("Texto não fornecido.");
+                    return BadRequest("Texto nÃ£o fornecido.");
                 }
 
-                // Verifica se a string é um palíndromo
+                // Verifica se a string Ã© um palÃ­ndromo
                 bool palindromo = VerificarPalindromo(dados.Texto);
 
-                // Conta as ocorrências de cada caractere na string
+                // Conta as ocorrÃªncias de cada caractere na string
                 Dictionary<char, int> ocorrenciasCaracteres = ContarOcorrenciasCaracteres(dados.Texto);
 
-                // Monta o corpo de saída
+                // Monta o corpo de saÃ­da
                 var resultado = new {
                     palindromo = palindromo,
                     ocorrencias_caracteres = ocorrenciasCaracteres
@@ -31,9 +31,9 @@ namespace manipulacao_string.Controllers  {
             }
 
             private bool VerificarPalindromo(string texto) {
-                // Remove os espaços em branco e converte para minúsculas
+                // Remove os espaÃ§os em branco e converte para minÃºsculas
                 string textoFormatado = texto.Replace(" ", "").ToLower();
-                // Compara o texto original com sua versão invertida
+                // Compara o texto original com sua versÃ£o invertida
                 return textoFormatado == new string(textoFormatado.Reverse().ToArray());
             }
 
@@ -41,7 +41,7 @@ namespace manipulacao_string.Controllers  {
                 Dictionary<char, int> ocorrencias = new Dictionary<char, int>();
 
                 foreach (char caractere in texto) {
-                    if (!char.IsWhiteSpace(caractere)) // Ignora espaços em branco
+                    if (!char.IsWhiteSpace(caractere)) // Ignora espaÃ§os em branco
                     {
                         if (ocorrencias.ContainsKey(caractere)) {
                             ocorrencias[caractere]++;
